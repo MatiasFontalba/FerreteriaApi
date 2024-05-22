@@ -82,7 +82,7 @@
       },
       {
         "Name": "value",
-        "Type": "System.String",
+        "Type": "FerreteriaAPI.Models.Producto",
         "IsRequired": true
       }
     ],

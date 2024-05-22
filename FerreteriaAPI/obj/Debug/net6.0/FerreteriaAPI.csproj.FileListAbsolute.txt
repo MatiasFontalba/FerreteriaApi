@@ -23,3 +23,4 @@ M:\Matias\Proyectos con C#\Ferreteria\FerreteriaAPI\obj\Debug\net6.0\refint\Ferr
 M:\Matias\Proyectos con C#\Ferreteria\FerreteriaAPI\obj\Debug\net6.0\FerreteriaAPI.pdb
 M:\Matias\Proyectos con C#\Ferreteria\FerreteriaAPI\obj\Debug\net6.0\FerreteriaAPI.genruntimeconfig.cache
 M:\Matias\Proyectos con C#\Ferreteria\FerreteriaAPI\obj\Debug\net6.0\ref\FerreteriaAPI.dll
+M:\Matias\Proyectos con C#\Ferreteria\FerreteriaAPI\obj\Debug\net6.0\FerreteriaAPI.sourcelink.json

@@ -1,4 +1,6 @@
 ﻿using FerreteriaAPI.Models;
+using FerreteriaAPI.Service;
+using FerreteriaAPI.Service.Implements;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,39 +11,40 @@ namespace FerreteriaAPI.Controllers
     [ApiController]
     public class ProductoController : ControllerBase
     {
-        static IList<Producto> lista = new List<Producto>();
+        IProducto service = new ProductoService();
         // GET: api/<ProductoController>
         [HttpGet]
         public IList<Producto> Get()
         {
-            return lista;
+            return service.Listar();
         }
 
         // GET api/<ProductoController>/5
         [HttpGet("{id}")]
         public Producto Get(int id)
         {
-            return lista.FirstOrDefault(x => x.idProducto == id);
+            return service.Read(id);
         }
 
         // POST api/<ProductoController>
         [HttpPost]
         public void Post([FromBody] Producto objeto)
         {
-            lista.Add(objeto);
+            service.Create(objeto);
         }
 
         // PUT api/<ProductoController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Producto value)
         {
+            service.Update(id, value);
         }
 
         // DELETE api/<ProductoController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            lista.Remove(lista.FirstOrDefault(x => x.idProducto == id));
+            service.Delete(id);
         }
     }
 }
