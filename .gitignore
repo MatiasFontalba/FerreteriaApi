@@ -62,7 +62,7 @@ $RECYCLE.BIN/
 ScaffoldingReadMe.txt
 
 # Visual Studio 2019 (uncomment if not using)
-../.vs/
+.vs/
 
 FerreteriaAPI/obj/
 # Rider
