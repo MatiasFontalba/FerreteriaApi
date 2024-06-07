@@ -17,7 +17,10 @@ namespace FerreteriaAPI.Controllers
         [HttpGet]
         public ActionResult<IList<Producto>> Get()
         {
-            try { return Ok(service.Listar()); }
+            try {
+                //foreach(Producto elemento in Producto) { }
+                return Ok(service.Listar()); 
+            }
             catch (Exception e) {
                 return NotFound(e.Message);
             }
@@ -28,6 +31,9 @@ namespace FerreteriaAPI.Controllers
         public ActionResult<Producto> Get(int id)
         {
             try {
+                Console.WriteLine("Vengo del controlador del producto en su metodo de obtener por id a decir");
+                Console.WriteLine("El id consultado es el " + id);
+                Console.WriteLine("---------------------------------------");
                 return Ok( service.Read(id));
             }
             catch(Exception e) {
@@ -42,7 +48,14 @@ namespace FerreteriaAPI.Controllers
         {
             try {
                 service.Create(objeto);
-                return Ok("Existe un error con el dato ingresado");
+                Console.WriteLine("Vengo desde el controlador del producto en su metodo post para decir que se realizo bien la peticion");
+                Console.WriteLine("El nombre del producto es:" + objeto.nombre);
+                Console.WriteLine("El precio del producto es:" + objeto.precio);
+                Console.WriteLine("El stock del producto es:" + objeto.stock);
+                Console.WriteLine(objeto.descripcion);
+                Console.WriteLine("-------------------------------------");
+                //Console.WriteLine("De donde viene el log (File) y el dato que entrega");
+                return Ok("Producto ingresado correctamente");
                     }
             catch (Exception e)
             {
@@ -64,6 +77,9 @@ namespace FerreteriaAPI.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
+            Console.WriteLine("Vengo del controlador de producto en su metodo Delete para decir: ");
+            Console.WriteLine("El producto que se acaba de eliminar contenia el id" + id);
+            Console.WriteLine("----------------------------------------");
             service.Delete(id);
             return Ok("Producto eliminado");
         }
